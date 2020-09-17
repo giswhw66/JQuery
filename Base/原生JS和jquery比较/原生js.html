@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>原生JavaScript</title>
+        <meta charset="utf-8">
+        <style>
+            div{
+                height: 100px;
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="button" value="设置边框" id="btnOne">
+        <input type="button" value="设置文本" id="btnTwo">
+        <div></div>
+        <div></div>
+        <div></div>
+        <script>
+            //入口函数
+            window.onload=function(){
+                var btnOne=document.getElementById("btnOne");
+                var btnTwo=document.getElementById("btnTwo");
+
+                //设置边框
+                btnOne.onclick=function(){
+                    for(var x=0;x<document.getElementsByTagName("div").length;x++){
+                        document.getElementsByTagName("div")[x].style.border="1px solid red";
+                    }
+                }
+
+                //设置文本
+                btnTwo.onclick=function(){
+                    for(var x=0;x<document.getElementsByTagName("div").length;x++){
+                        //textContent存在浏览器兼容问题
+                        document.getElementsByTagName("div")[x].textContent="这是我设置的一个文本";
+                    }
+                }
+            }
+
+            //再来一个入口函数,会覆盖第一个入口函数
+            // window.onload=function(){
+            //     console.log("我又是一个入口函数");
+            // }
+        </script>
+
+        <!-- 
+            原生js的缺点：
+            1、不能添加多个入口函数（window.onload），如果添加了，后面的会把前面的覆盖
+            2、原生js的api名字都太长太难记
+            3、原生js有时候代码冗余，如上面的遍历div
+            4、原生js有些属性或方法存在浏览器兼容问题
+            5、原生js的容错率比较低，前面的代码出了问题，后面的代码就执行不了了
+         -->
+    </body>
+</html>
