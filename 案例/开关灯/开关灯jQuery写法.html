@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>开关灯</title>
+        <style>
+            div{
+                height: 100px;
+                width: 100px;
+                background-color: gray;
+                margin-top: 10px;
+            }
+        </style>
+        <script src="../../lib/jquery-1.12.4.min.js"></script>
+        <script>
+            $(function (){
+                $('#btnOpen').click(function(){
+                    $('div').get(0).style.backgroundColor="yellow";//普通dom形式
+                    //$($('div').get(0)).css('backgroundColor','yellow');//转化为jQuery对象后的形式
+                });
+                $('#btnClose').click(function(){
+                    $('div').get(0).style.backgroundColor="gray";
+                    //$($('div').get(0)).css('backgroundColor','gray');
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <input type="button" id="btnOpen" value="开灯">
+        <input type="button" id="btnClose" value="关灯">
+        <div></div>
+    </body>
+</html>

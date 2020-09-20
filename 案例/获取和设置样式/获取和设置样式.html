@@ -1,0 +1,69 @@
+<html>
+
+<head>
+    <title>获取和设置样式</title>
+    <meta charset="utf-8">
+    <style>
+        #div1 {
+            height: 200px;
+            background-color: pink;
+            border: 2px solid red;
+        }
+    </style>
+    <!-- 
+            获取和设置样式：
+            1、css();方法
+            获取样式：
+                a：css('样式名');
+                b：在IE浏览器中获取边框这样的样式，要给一个准确的边框
+                c: 获取包含了多个dom元素的jQuery对象的样式，只能获取到第一个dom对象的样式
+            设置样式：
+                a：css('样式名','样式值');
+                b：设置的样式为行内样式
+            设置多样式：
+            $('#div1').css({
+                'width':300,
+                'height':200px,
+                'background-color':'green'
+            });
+         -->
+</head>
+
+<body>
+    <input type="button" id="btnGet" value="获取" />
+    <input type="button" id="btnSet" value="设置" />
+    <div id="div1" style="width: 200px;"></div>
+    <div id="div2" style="width: 200px;"></div>
+    <div id="div3" style="width: 200px;"></div>
+</body>
+
+</html>
+<script src="../../lib/jquery-1.12.4.min.js"></script>
+<script>
+    $(function () {
+        $('#btnGet').click(function () {
+            console.log($('#div1').css('width'));
+            console.log($('#div1').css('background-color'));
+            console.log($('#div1').css('backgroundColor'));
+            console.log($('#div1').css('border'));
+            //在IE浏览器中获取边框这样的样式，要给一个准确的边框
+            console.log($('#div1').css('border-top-width'));
+            //获取包含了多个dom元素的jQuery对象的样式，只能获取到第一个dom对象的样式
+            console.log($('div').css('width'));
+        });
+
+        $('#btnSet').click(function () {
+            $('#div1').css('width', '300px');
+            //$('#div1').css('width',300);
+            $('#div1').css('backgroundColor', 'yellow');
+            $('#div1').css('border', '1px solid gray');
+
+            // 给标签为div的元素们设置样式
+            $('div').css({
+                width: '300px',
+                'height': '300px',
+                'marginTop': 10
+            });
+        });
+    });
+</script>

@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>获取和设置文本内容</title>
+        <!-- 
+            获取和设置标签文本：
+            1、text();方法
+            a：text()方法不给参数，则就是获取文本。会获取这个标签中的所有文本，包括后代元素的文本。
+               包含了多个dom元素的jQuery对象，通过text()方法获取文本，会把所有的dom元素的文本获取到
+            b：text()方法给参数，则就是设置文本。设置文本会覆盖原来的内容，如果设置的文本中包含标签，
+               是不会把这个标签给解析出来的。
+               包含了多个dom元素的jQuery对象，通过text()方法设置文本，会把所有的dom元素都设置上。
+         -->
+    </head>
+    <body>
+        <input type="button" value="获取" id="btnGet"/>
+        <input type="button" value="设置" id="btnSet"/>
+
+        <div id="div1">
+            我是一个div标签
+            <p>我是一个p标签<span>span1</span></p>
+        </div>
+
+        <div id="div2">
+            我是一个div标签
+            <p>我是一个p2标签<span>span2</span></p>
+        </div>
+    </body>
+</html>
+<script src="../../lib/jquery-1.12.4.min.js"></script>
+<script>
+
+    $('#btnGet').click(function(){
+        //获取id为div1的标签的文本
+        alert($('#div1').text());
+    });
+    $('#btnSet').click(function(){
+        //设置id为div1的标签的文本
+        $('#div1').text("这个一个文本<a>百度一下</a>");
+    });
+</script>

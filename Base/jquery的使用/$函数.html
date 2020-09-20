@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>$函数</title>
+    </head>
+    <body>
+        <!-- 
+            如果报错：$ is not defined，就说明没有引入jquery文件
+            一、$是什么？
+            1、$是一个自执行函数。
+            2、$其实和jQuery是等价的，是一个函数
+            3、如果参数传递的是一个匿名函数，就变成了入口函数
+            4、如果参数传递了一个字符串，就变成了一个选择器（$('#btn')）或创建一个标签（$('<div>')）
+            5、如果参数传递的是一个dom对象，就会把dom对象转换成jQuery对象
+
+            二、什么是dom对象？
+            原生js选择器获取到的对象。如document.getElementByID("one");
+            特点：只能调用dom属性或者方法，不能调用jQuery对象的属性或者方法
+
+            三、什么是jQuery对象？
+            利用jQuery选择器获取到的对象
+            特点：只能调用jQuery的属性或者方法，不能调用原生js的dom属性和方法。
+            jQuery对象命名常以$符号开头
+
+            四、dom对象转成jQuery对象
+            //var div1=document.getElementById("one");
+            //var $div1=$(div1);
+
+            五、jQuery对象转为dom对象
+            //var $divs=$('div');
+            //var div1=$divs[0];//方式一
+            //var div1=$div1.get(0);//方式二
+         -->
+        <script src="../../lib/jquery-1.12.4.min.js"></script>
+        <script>
+            $(function(){
+                alert(1);
+            });
+            console.log(window);
+
+            // var div1=document.getElementById("one");
+            // var $div1=$(div1);
+            var $divs=$('div');
+            var div1=$divs[0];
+        </script>
+    </body>
+</html>

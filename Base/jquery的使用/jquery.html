@@ -33,7 +33,6 @@
       2、执行时机不同：jquery的入口函数要快于window.onload入口函数
         a：jquery入口函数要等待页面上dom树加载完后执行
         b：window.onload要等待页面上的所有的资源（dom树、外部css/js链接、图片）都加载完后才执行
-
    -->
 
     <!-- 引入jquery -->
@@ -49,6 +48,10 @@
         $(function () {
 
         });
+        //入口函数：写法三
+        jQuery(function(){
+            //alert(1);
+        })
 
         
     </script>

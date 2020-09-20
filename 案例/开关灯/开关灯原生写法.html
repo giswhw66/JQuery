@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>开关灯</title>
+        <style>
+            div{
+                height: 100px;
+                width: 100px;
+                background-color: gray;
+                margin-top: 10px;
+            }
+        </style>
+        <script>
+            // 原生写法
+            function kgd(isKgd){
+                var div1=document.getElementsByTagName('div')[0];
+                if(isKgd){
+                    div1.style.backgroundColor="yellow";
+                }else{
+                    div1.style.backgroundColor="gray";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <input type="button" id="btnOpen" value="开灯" onclick="kgd(true)">
+        <input type="button" id="btnClose" value="关灯" onclick="kgd(false)">
+        <div></div>
+    </body>
+</html>

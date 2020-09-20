@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <title>jquery选择器</title>
+    <meta charset="utf-8">
+    <!-- 
+            简介：jquery选择器是jQuery为我们提供的一组方法，让我们更方便的获取到页面中的元素，
+                  注意：jQuery选择器返回的是jQuery对象
+                  
+            jQuery基本选择器：这类选择器都带冒号:
+            名称            用法                                描述
+            :eq(index)      $('li:eq(2)').css('color','red');  获取到li元素中，选择索引号为2的元素，
+                                                               索引号从0开始
+
+            :odd            $('li:odd').css('color','red');    获取到li元素中，索引号为奇数的元素
+            :even           $('li:even').css('color','red');   获取到li元素中，索引号为偶数的元素
+         -->
+</head>
+
+<body>
+    <ul>
+        <li>我是1第元素</li>
+        <li>我是2第元素</li>
+        <li>我是3第元素</li>
+        <li>我是4第元素</li>
+        <li>我是5第元素</li>
+        <li>我是6第元素</li>
+        <li>我是7第元素</li>
+        <li>我是8第元素</li>
+        <li>我是9第元素</li>
+        <li>我是10第元素</li>
+    </ul>
+</body>
+
+</html>
+<script src="../../../lib/jquery-1.12.4.min.js"></script>
+<script>
+    $(function () {
+        $('li:odd').css('backgroundColor','pink');
+        $('li:even').css('backgroundColor','blue');
+        $('li:eq(2)').css('backgroundColor', 'red');
+    });
+</script>
